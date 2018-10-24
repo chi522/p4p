@@ -1,0 +1,52 @@
+name:                p4p
+version:             0.1.0.0
+github:              "chi522/p4p"
+license:             BSD3
+author:              "chihiro ono"
+maintainer:          "chi5hi22ro@gmail.com"
+copyright:           "2018 chihiro ono"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Experimental
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/chi522/p4p#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- unicode-show >= 0.1.0.3
+- markdown-unlit >= 0.5.0
+- doctest >= 0.15.0
+- hspec >= 2.5.5
+
+library:
+  source-dirs: src
+
+executables:
+  p4p-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - p4p
+
+tests:
+  p4p-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - p4p
