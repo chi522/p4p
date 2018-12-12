@@ -1,5 +1,8 @@
 module YouWillAllComform where
 
+import Data.List (group)
+
+
 type Cap = Char
 {-
 'F' 前向き
@@ -16,8 +19,11 @@ type Range = (Pos, Pos)
 cap1 :: [Cap]
 cap1 = "FFBBBFBBBFFBF"
 
-pospos1 :: [Range]
-pospos1 = [(3, 5), (7, 9), (12, 12)]
+ranges1 :: [Range]
+ranges1 = [(1,2), (3,5), (6,6), (7,9), (10,11), (12,12), (13,13)]
+
+ranges2 :: [Range]
+ranges2 = [(3, 5), (7, 9), (12, 12)]
 
 cap2 :: [Cap]
 cap2 = "FFBBBFBBBFFBF"
@@ -58,5 +64,6 @@ sample = [1,1,2,3]
 
 twoplus :: Int -> Int
 twoplus n = n + 2
+
 
 
